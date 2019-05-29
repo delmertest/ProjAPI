@@ -1,0 +1,209 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2019-05-29T19:13:21.985Z",
+        "line": 4,
+        "name": "Valid credentials",
+        "description": "",
+        "id": "bcp-api-automation-exam;valid-credentials",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1351347597,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "a user has credentials",
+            "match": {
+              "location": "UserLoginSteps.user_credentials(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "password",
+                  "123456bcp"
+                ]
+              },
+              {
+                "cells": [
+                  "username",
+                  "examenparabcp@gmail.com"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2785215333,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "a user login",
+            "match": {
+              "location": "UserLoginSteps.user_login()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 31246099,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the status code is 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 19
+                }
+              ],
+              "location": "UserLoginSteps.verify_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 511847932,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "response includes the following",
+            "match": {
+              "location": "UserLoginSteps.response_equals(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "token",
+                  "59c57973-3e9e-405d-92f8-ce5c7f03dccb"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@user"
+          },
+          {
+            "name": "@login"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2019-05-29T19:13:26.669Z",
+        "line": 14,
+        "name": "Invalid credentials",
+        "description": "",
+        "id": "bcp-api-automation-exam;invalid-credentials",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1379085,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "a user has credentials",
+            "match": {
+              "location": "UserLoginSteps.user_credentials(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "password",
+                  "123456bco"
+                ]
+              },
+              {
+                "cells": [
+                  "username",
+                  "examenparabcp@gmail.com"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1025810508,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "a user login",
+            "match": {
+              "location": "UserLoginSteps.user_login()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 267989,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the status code is 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 19
+                }
+              ],
+              "location": "UserLoginSteps.verify_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15917837,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "response includes the following",
+            "match": {
+              "location": "UserLoginSteps.response_equals(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "message",
+                  "The requested Item has not been found"
+                ]
+              },
+              {
+                "cells": [
+                  "type",
+                  "ItemNotFoundException"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@user"
+          },
+          {
+            "name": "@nologin"
+          }
+        ]
+      }
+    ],
+    "name": "BCP API automation exam",
+    "description": "",
+    "id": "bcp-api-automation-exam",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/UserLogin.feature",
+    "tags": []
+  }
+]
